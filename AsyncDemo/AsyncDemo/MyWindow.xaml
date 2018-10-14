@@ -17,6 +17,7 @@
                     FontSize="20" Click="DelayTaskAsync"/>
             <Label x:Name="lbl1" Content="label" HorizontalContentAlignment="Center"
                    Margin="0,25,0,0" FontSize="20"/>
+            <Button x:Name="btn4" Content="Another ModelWindow" Click="AnotherModelWindow" />
         </StackPanel>
     </Grid>
 </Window>

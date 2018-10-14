@@ -16,6 +16,10 @@ namespace AsyncDemo
             InitializeComponent();
         }
 
+        public event EventHandler<ProgressChangedEventArgs> ProgressChanged;
+
+        public OriginalWindowApi OriginalWindowApi { get; set; } = new OriginalWindowApi();
+
         private async void StartDownload(object sender, RoutedEventArgs e)
         {
             btn1.IsEnabled = false;
@@ -57,6 +61,12 @@ namespace AsyncDemo
 
             lbl1.Content = (await task).Length;
             btn3.IsEnabled = true;
+        }
+
+        private void AnotherModelWindow(object o , RoutedEventArgs e)
+        {
+            var anotherWindow = new AnotherWindow(OriginalWindowApi);
+            anotherWindow.ShowDialog();
         }
 
         #region Helper
@@ -101,6 +111,8 @@ namespace AsyncDemo
                 
             }
         }
+
+
         #endregion
 
         #region private fields
