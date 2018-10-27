@@ -44,6 +44,7 @@ namespace XMLDemo
 
         private int GenRandomId()
         {
+            var t = Guid.NewGuid();
             return Guid.NewGuid().GetHashCode();
         }
 
